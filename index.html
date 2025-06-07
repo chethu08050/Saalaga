@@ -403,58 +403,101 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" group-select">
-                                    <div class="box-select">
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Types of trees in the Land</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Areca Nut</li>
-                                                <li data-value="2" class="option selected">Coconut</li>
-                                                <li data-value="3" class="option">Mango </li>
-                                                <li data-value="4" class="option">cofee plantaion</li>
-                                                <li data-value="5" class="option">others</li>
-                                            </ul>
+                                <style>
+                                    .dropdown-container {
+                                        position: relative;
+                                        display: inline-block;
+                                        width: 250px;
+                                    }
+                                
+                                    .dropdown-label {
+                                        background-color: #f2f2f2;
+                                        padding: 10px;
+                                        cursor: pointer;
+                                        border: 1px solid #ccc;
+                                        border-radius: 4px;
+                                        font-weight: bold;
+                                    }
+                                
+                                    .dropdown-content {
+                                        display: none;
+                                        position: absolute;
+                                        background-color: #fff;
+                                        border: 1px solid #ddd;
+                                        border-radius: 4px;
+                                        margin-top: 5px;
+                                        z-index: 100;
+                                        padding: 10px;
+                                        width: 100%;
+                                        max-height: 200px;
+                                        overflow-y: auto;
+                                    }
+                                
+                                    .dropdown-container.open .dropdown-content {
+                                        display: block;
+                                    }
+                                </style>
+                                
+                                <script>
+                                    function toggleDropdown(el) {
+                                        el.parentElement.classList.toggle('open');
+                                    }
+                                </script>
+                                
+                                <!-- START: Group Select Section with Dropdowns -->
+                                <div class="group-select" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                
+                                    <!-- DROPDOWN 1: Types of Trees in the Land -->
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Types of Trees in the Land ▼</div>
+                                        <div class="dropdown-content">
+                                            <label><input type="checkbox" name="trees" value="Areca Nut"> Areca Nut</label><br>
+                                            <label><input type="checkbox" name="trees" value="Coconut" checked> Coconut</label><br>
+                                            <label><input type="checkbox" name="trees" value="Mango"> Mango</label><br>
+                                            <label><input type="checkbox" name="trees" value="Coffee Plantation"> Coffee Plantation</label><br>
+                                            <label><input type="checkbox" name="trees" value="Others"> Others</label><br>
                                         </div>
                                     </div>
-                                    <div class="box-select">
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Ownership Types in RTC</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Patta Land / Khatedar</li>
-                                                <li data-value="2" class="option selected">Joint Ownership</li>
-                                                <li data-value="3" class="option">Government Land</li>
-                                                <li data-value="4" class="option">Kumki Land</li>
-                                                <li data-value="5" class="option">Forest Department Land</li>
+                                
+                                    <!-- DROPDOWN 2: Ownership Types in RTC -->
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Ownership Types in RTC ▼</div>
+                                        <div class="dropdown-content">
+                                            <label><input type="checkbox" name="ownership" value="Patta Land / Khatedar"> Patta Land / Khatedar</label><br>
+                                            <label><input type="checkbox" name="ownership" value="Joint Ownership" checked> Joint Ownership</label><br>
+                                            <label><input type="checkbox" name="ownership" value="Government Land"> Government Land</label><br>
+                                            <label><input type="checkbox" name="ownership" value="Kumki Land"> Kumki Land</label><br>
+                                            <label><input type="checkbox" name="ownership" value="Forest Department Land"> Forest Department Land</label><br>
                                         </div>
                                     </div>
-                                    <div class="box-select">
-
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Environment & Accessibility</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Farmhouse </li>
-                                                <li data-value="2" class="option selected">Existing Trees</li>
-                                                <li data-value="3" class="option"> Dairy / Poultry Shed</li>
-                                                <li data-value="4" class="option">Boundary Tree Plantation
-
-                                                </li>
-                                            </ul>
+                                
+                                    <!-- DROPDOWN 3: Environment Accessibility -->
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Environment Accessibility ▼</div>
+                                        <div class="dropdown-content">
+                                            <label><input type="checkbox" name="environment" value="Farmhouse"> Farmhouse</label><br>
+                                            <label><input type="checkbox" name="environment" value="Existing Trees" checked> Existing Trees</label><br>
+                                            <label><input type="checkbox" name="environment" value="Dairy / Poultry Shed"> Dairy / Poultry Shed</label><br>
+                                            <label><input type="checkbox" name="environment" value="Boundary Tree Plantation"> Boundary Tree Plantation</label><br>
                                         </div>
                                     </div>
-                                    <div class="box-select">
-
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Beds: Any</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">1</li>
-                                                <li data-value="2" class="option selected">2</li>
-                                                <li data-value="3" class="option">3</li>
-                                                <li data-value="4" class="option">4</li>
-                                                <li data-value="5" class="option">5</li>
-                                                <li data-value="6" class="option">6</li>
-                                            </ul>
+                                
+                                    <!-- DROPDOWN 4: Power And Amenities -->
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Power And Amenities ▼</div>
+                                        <div class="dropdown-content">
+                                            <label><input type="checkbox" name="amenities" value="Electricity Connection"> Electricity Connection</label><br>
+                                            <label><input type="checkbox" name="amenities" value="Borewell / Tube Well" checked> Borewell / Tube Well</label><br>
+                                            <label><input type="checkbox" name="amenities" value="Solar Power System"> Solar Power System</label><br>
+                                            <label><input type="checkbox" name="amenities" value="Water Storage Tank"> Water Storage Tank</label><br>
+                                            <label><input type="checkbox" name="amenities" value="Internal Road Access"> Internal Road Access</label><br>
+                                            <label><input type="checkbox" name="amenities" value="Fencing"> Fencing</label><br>
                                         </div>
                                     </div>
+                                
+                                </div>
+                                <!-- END: Group Select Section -->
+                                
                                 </div>
                             </div>
                         </div>
