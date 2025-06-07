@@ -1,0 +1,79 @@
+/* Custom Header Styles */
+.header {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header .header-inner-wrap {
+    padding: 15px 0;
+}
+
+.header .main-menu .navigation > li > a {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.header .header-right .box-user .tf-button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+    .header .main-menu .navigation > li > a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+    .header .header-right .box-user .tf-button {
+        font-size: 13px;
+        padding: 6px 16px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header .header-inner-wrap {
+        padding: 10px 0;
+    }
+    
+    .header .main-menu {
+        display: none;
+    }
+    
+    .header .mobile-button {
+        display: block;
+    }
+    
+    .header .header-right .box-user .tf-button {
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .header-logo img {
+        max-width: 120px;
+    }
+    
+    .header .header-right .phone-number {
+        display: none;
+    }
+    
+    .header .header-right .box-user .tf-button {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header .header-logo img {
+        max-width: 100px;
+    }
+    
+    .header .header-right .box-user .tf-button {
+        padding: 4px 10px;
+    }
+} 
