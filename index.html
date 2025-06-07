@@ -405,97 +405,176 @@
                                 </div>
                                 <style>
                                     .dropdown-container {
-                                        position: relative;
-                                        display: inline-block;
-                                        width: 250px;
+                                      position: relative;
+                                      display: inline-block;
+                                      width: 250px;
+                                      font-family: Arial, sans-serif;
                                     }
                                 
                                     .dropdown-label {
-                                        background-color: #f2f2f2;
-                                        padding: 10px;
-                                        cursor: pointer;
-                                        border: 1px solid #ccc;
-                                        border-radius: 4px;
-                                        font-weight: bold;
+                                      background-color: #f2f2f2;
+                                      padding: 10px;
+                                      cursor: pointer;
+                                      border: 1px solid #ccc;
+                                      border-radius: 4px;
+                                      font-weight: bold;
+                                      user-select: none;
+                                      display: flex;
+                                      justify-content: space-between;
+                                      align-items: center;
+                                    }
+                                
+                                    .dropdown-label .arrow {
+                                      margin-left: 10px;
+                                      font-size: 14px;
+                                      transition: transform 0.3s ease;
+                                    }
+                                
+                                    .dropdown-container.open .dropdown-label .arrow {
+                                      transform: rotate(180deg);
                                     }
                                 
                                     .dropdown-content {
-                                        display: none;
-                                        position: absolute;
-                                        background-color: #fff;
-                                        border: 1px solid #ddd;
-                                        border-radius: 4px;
-                                        margin-top: 5px;
-                                        z-index: 100;
-                                        padding: 10px;
-                                        width: 100%;
-                                        max-height: 200px;
-                                        overflow-y: auto;
+                                      display: none;
+                                      position: absolute;
+                                      background-color: #fff;
+                                      border: 1px solid #ddd;
+                                      border-radius: 4px;
+                                      margin-top: 5px;
+                                      z-index: 100;
+                                      padding: 10px;
+                                      width: 100%;
+                                      max-height: 200px;
+                                      overflow-y: auto;
+                                      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
                                     }
                                 
                                     .dropdown-container.open .dropdown-content {
-                                        display: block;
+                                      display: block;
                                     }
-                                </style>
                                 
-                                <script>
-                                    function toggleDropdown(el) {
-                                        el.parentElement.classList.toggle('open');
+                                    .dropdown-content label {
+                                      display: block;
+                                      padding: 5px 0;
+                                      cursor: pointer;
+                                      user-select: none;
                                     }
-                                </script>
                                 
-                                <!-- START: Group Select Section with Dropdowns -->
-                                <div class="group-select" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                    /* Container for all dropdowns */
+                                    .group-select {
+                                      display: flex;
+                                      flex-wrap: wrap;
+                                      gap: 20px;
+                                    }
+                                  </style>
+                                </head>
+                                <body>
+                                
+                                  <!-- START: Group Select Section with Dropdowns -->
+                                  <div class="group-select">
                                 
                                     <!-- DROPDOWN 1: Types of Trees in the Land -->
                                     <div class="dropdown-container">
-                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Types of Trees in the Land ▼</div>
-                                        <div class="dropdown-content">
-                                            <label><input type="checkbox" name="trees" value="Areca Nut"> Areca Nut</label><br>
-                                            <label><input type="checkbox" name="trees" value="Coconut" checked> Coconut</label><br>
-                                            <label><input type="checkbox" name="trees" value="Mango"> Mango</label><br>
-                                            <label><input type="checkbox" name="trees" value="Coffee Plantation"> Coffee Plantation</label><br>
-                                            <label><input type="checkbox" name="trees" value="Others"> Others</label><br>
-                                        </div>
+                                      <div class="dropdown-label">
+                                        Types of Trees in the Land 
+                                        <span class="arrow">▼</span>
+                                      </div>
+                                      <div class="dropdown-content">
+                                        <label><input type="checkbox" name="trees" value="Areca Nut"> Areca Nut</label>
+                                        <label><input type="checkbox" name="trees" value="Coconut" checked> Coconut</label>
+                                        <label><input type="checkbox" name="trees" value="Mango"> Mango</label>
+                                        <label><input type="checkbox" name="trees" value="Coffee Plantation"> Coffee Plantation</label>
+                                        <label><input type="checkbox" name="trees" value="Others"> Others</label>
+                                      </div>
                                     </div>
                                 
                                     <!-- DROPDOWN 2: Ownership Types in RTC -->
                                     <div class="dropdown-container">
-                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Ownership Types in RTC ▼</div>
-                                        <div class="dropdown-content">
-                                            <label><input type="checkbox" name="ownership" value="Patta Land / Khatedar"> Patta Land / Khatedar</label><br>
-                                            <label><input type="checkbox" name="ownership" value="Joint Ownership" checked> Joint Ownership</label><br>
-                                            <label><input type="checkbox" name="ownership" value="Government Land"> Government Land</label><br>
-                                            <label><input type="checkbox" name="ownership" value="Kumki Land"> Kumki Land</label><br>
-                                            <label><input type="checkbox" name="ownership" value="Forest Department Land"> Forest Department Land</label><br>
-                                        </div>
+                                      <div class="dropdown-label">
+                                        Ownership Types in RTC
+                                        <span class="arrow">▼</span>
+                                      </div>
+                                      <div class="dropdown-content">
+                                        <label><input type="checkbox" name="ownership" value="Patta Land / Khatedar"> Patta Land / Khatedar</label>
+                                        <label><input type="checkbox" name="ownership" value="Joint Ownership" checked> Joint Ownership</label>
+                                        <label><input type="checkbox" name="ownership" value="Government Land"> Government Land</label>
+                                        <label><input type="checkbox" name="ownership" value="Kumki Land"> Kumki Land</label>
+                                        <label><input type="checkbox" name="ownership" value="Forest Department Land"> Forest Department Land</label>
+                                      </div>
                                     </div>
                                 
                                     <!-- DROPDOWN 3: Environment Accessibility -->
                                     <div class="dropdown-container">
-                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Environment Accessibility ▼</div>
-                                        <div class="dropdown-content">
-                                            <label><input type="checkbox" name="environment" value="Farmhouse"> Farmhouse</label><br>
-                                            <label><input type="checkbox" name="environment" value="Existing Trees" checked> Existing Trees</label><br>
-                                            <label><input type="checkbox" name="environment" value="Dairy / Poultry Shed"> Dairy / Poultry Shed</label><br>
-                                            <label><input type="checkbox" name="environment" value="Boundary Tree Plantation"> Boundary Tree Plantation</label><br>
-                                        </div>
+                                      <div class="dropdown-label">
+                                        Environment Accessibility
+                                        <span class="arrow">▼</span>
+                                      </div>
+                                      <div class="dropdown-content">
+                                        <label><input type="checkbox" name="environment" value="Farmhouse"> Farmhouse</label>
+                                        <label><input type="checkbox" name="environment" value="Existing Trees" checked> Existing Trees</label>
+                                        <label><input type="checkbox" name="environment" value="Dairy / Poultry Shed"> Dairy / Poultry Shed</label>
+                                        <label><input type="checkbox" name="environment" value="Boundary Tree Plantation"> Boundary Tree Plantation</label>
+                                      </div>
                                     </div>
                                 
                                     <!-- DROPDOWN 4: Power And Amenities -->
                                     <div class="dropdown-container">
-                                        <div class="dropdown-label" onclick="toggleDropdown(this)">Power And Amenities ▼</div>
-                                        <div class="dropdown-content">
-                                            <label><input type="checkbox" name="amenities" value="Electricity Connection"> Electricity Connection</label><br>
-                                            <label><input type="checkbox" name="amenities" value="Borewell / Tube Well" checked> Borewell / Tube Well</label><br>
-                                            <label><input type="checkbox" name="amenities" value="Solar Power System"> Solar Power System</label><br>
-                                            <label><input type="checkbox" name="amenities" value="Water Storage Tank"> Water Storage Tank</label><br>
-                                            <label><input type="checkbox" name="amenities" value="Internal Road Access"> Internal Road Access</label><br>
-                                            <label><input type="checkbox" name="amenities" value="Fencing"> Fencing</label><br>
-                                        </div>
+                                      <div class="dropdown-label">
+                                        Power And Amenities
+                                        <span class="arrow">▼</span>
+                                      </div>
+                                      <div class="dropdown-content">
+                                        <label><input type="checkbox" name="amenities" value="Electricity Connection"> Electricity Connection</label>
+                                        <label><input type="checkbox" name="amenities" value="Borewell / Tube Well" checked> Borewell / Tube Well</label>
+                                        <label><input type="checkbox" name="amenities" value="Solar Power System"> Solar Power System</label>
+                                        <label><input type="checkbox" name="amenities" value="Water Storage Tank"> Water Storage Tank</label>
+                                        <label><input type="checkbox" name="amenities" value="Internal Road Access"> Internal Road Access</label>
+                                        <label><input type="checkbox" name="amenities" value="Fencing"> Fencing</label>
+                                      </div>
                                     </div>
                                 
-                                </div>
+                                  </div>
+                                  <!-- END: Group Select Section -->
+                                
+                                  <script>
+                                    document.addEventListener('DOMContentLoaded', () => {
+                                      // Toggle dropdown open/close
+                                      function toggleDropdown(el) {
+                                        // Close all other dropdowns
+                                        document.querySelectorAll('.dropdown-container').forEach(container => {
+                                          if(container !== el.parentElement){
+                                            container.classList.remove('open');
+                                          }
+                                        });
+                                        // Toggle current
+                                        el.parentElement.classList.toggle('open');
+                                      }
+                                
+                                      // Attach click event to all dropdown labels
+                                      document.querySelectorAll('.dropdown-label').forEach(label => {
+                                        label.addEventListener('click', () => toggleDropdown(label));
+                                      });
+                                
+                                      // Close dropdown when checkbox changes (clicked)
+                                      document.querySelectorAll('.dropdown-content input[type="checkbox"]').forEach(checkbox => {
+                                        checkbox.addEventListener('change', function() {
+                                          const dropdownContainer = this.closest('.dropdown-container');
+                                          if (dropdownContainer) {
+                                            dropdownContainer.classList.remove('open');
+                                          }
+                                        });
+                                      });
+                                
+                                      // Close dropdowns if clicked outside
+                                      document.addEventListener('click', function(event) {
+                                        if (!event.target.closest('.dropdown-container')) {
+                                          document.querySelectorAll('.dropdown-container').forEach(container => {
+                                            container.classList.remove('open');
+                                          });
+                                        }
+                                      });
+                                    });
+                                  </script>
                                 <!-- END: Group Select Section -->
                                 
                                 </div>
