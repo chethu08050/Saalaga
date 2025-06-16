@@ -297,7 +297,7 @@
         top: 0;
         left: 0;
         right: 0;
-        position: fixed;
+        position: sticky;
         opacity: 0;
         z-index: 9999;
         -webkit-transform: translateY(-120%);
